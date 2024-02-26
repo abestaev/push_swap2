@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/20 19:37:18 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/20 19:40:55 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	ft_strlen(const char *s)
@@ -56,4 +68,19 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		t2++;
 	}
 	return (0);
+}
+
+int	ft_lst_size(t_list *lst)
+{
+	int		i;
+	t_list	*tmp;
+
+	i = 0;
+	tmp = lst;
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_lst.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/20 19:37:53 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/20 19:43:11 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	ft_putendl_fd(char *s, int fd)
@@ -8,11 +20,11 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    while (lst && lst->next)
-        lst = lst->next;
-    return (lst);
+	while (lst && lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 void	ft_lstadd_front(t_list **lst, t_list *new)

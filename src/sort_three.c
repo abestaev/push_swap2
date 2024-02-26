@@ -1,37 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/20 19:37:37 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/20 19:37:37 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
-void    ft_sort_three_reverse(t_data *data, t_list *lst)
+void	ft_sort_three_reverse(t_data *data, t_list *lst)
 {
-    int a;
-    int b;
-    int c;
+	int	a;
+	int	b;
+	int	c;
 
-    a = lst->content;
-    b = lst->next->content;
-    c = lst->next->next->content;
-    if (a > c && a > b && c > b)
-    {
-        rrb(data, 1);
-        sb(data, 1);
-    }
-    if (b > c && b > a && c > a)
-        rb(data, 1);
-    if (b > c && b > a && a > c)
-        sb(data, 1);
-    if (c > a && c > b && a > b)
-        rrb(data, 1);
-    if (c > b && b > a)
-    {
-        sb(data, 1);
-        rrb(data, 1);
-    }
+	a = lst->content;
+	b = lst->next->content;
+	c = lst->next->next->content;
+	if (a > c && a > b && c > b)
+	{
+		rrb(data, 1);
+		sb(data, 1);
+	}
+	if (b > c && b > a && c > a)
+		rb(data, 1);
+	if (b > c && b > a && a > c)
+		sb(data, 1);
+	if (c > a && c > b && a > b)
+		rrb(data, 1);
+	if (c > b && b > a)
+	{
+		sb(data, 1);
+		rrb(data, 1);
+	}
 }
 
-void    ft_sort_three(t_data *data, t_list *lst)
+void	ft_sort_three(t_data *data, t_list *lst)
 {
-    int a;
-    int b;
-    int c;
+	int	a;
+	int	b;
+	int	c;
 
 	a = lst->content;
 	b = lst->next->content;
@@ -54,8 +66,8 @@ void    ft_sort_three(t_data *data, t_list *lst)
 		sa(data, 1);
 }
 
-void    ft_sort_two(t_data *data)
+void	ft_sort_two(t_data *data)
 {
-    if (data->a->content > data->a->next->content)
-        sa(data, 1);
+	if (data->a->content > data->a->next->content)
+		sa(data, 1);
 }

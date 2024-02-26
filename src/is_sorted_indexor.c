@@ -1,57 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   min_max.c                                          :+:      :+:    :+:   */
+/*   is_sorted_indexor.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 19:36:52 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/26 11:40:04 by albestae         ###   ########.fr       */
+/*   Created: 2024/02/20 19:36:59 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/26 12:16:56 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-//todo: test si y a besoin de tmp
-// int	ft_is_sorted(t_data *data)
-// {
-// 	t_list	*tmp_a;
-// 	t_list	*tmp_b;
 
-// 	tmp_a = data.a;
-// 	tmp_b = data.b;
-// 	while (tmp && tmp->next)
-// 	{
-// 		if (tmp->content > tmp->next->content)
-// 			return (1);
-// 		tmp = tmp->next;
-// 	}
-// 	return (0);
-// }
+int	ft_is_sorted(t_list *lst)
+{
+	t_list	*tmp;
 
-int	ft_is_min(t_list *lst, int n)
+	tmp = lst;
+	while (tmp && tmp->next)
+	{
+		if (tmp->content > tmp->next->content)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+static void	ft_index_lst(t_list *lst)
 {
 	t_list *tmp;
-
+	int	i;
+	int size;
+	
+	i = 0;
+	size = ft_lst_size(lst);
 	tmp = lst;
 	while (tmp)
 	{
-		if (n > tmp->content)
-			return (0);
+		tmp->index = i;
+		if (size - size / 2 > i)
+			tmp->mediane = 1;
+		else
+			tmp->mediane = 0;
+		i++;
 		tmp = tmp->next;
 	}
-	return (1);
 }
 
-int	ft_is_max(t_list *lst, int n)
+void	ft_index(t_data *data)
 {
-	t_list *tmp;
-
-	tmp = lst;
-	while (tmp)
-	{
-		if (n < tmp->content)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
+	ft_index_lst(data->a);
+	ft_index_lst(data->b);
+	data->size_a = ft_lst_size(data->a);
+	data->size_b = ft_lst_size(data->b);
 }
+

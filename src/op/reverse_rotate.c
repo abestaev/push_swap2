@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/20 19:38:11 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/26 11:31:01 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	rra(t_data *data, int oui)
@@ -10,9 +22,7 @@ void	rra(t_data *data, int oui)
 	last = ft_lstlast(data->a);
 	tmp = data->a;
 	while (tmp && tmp->next && tmp->next->next)
-	{
 		tmp = tmp->next;
-	}
 	tmp->next = NULL;
 	ft_lstadd_front(&data->a, last);
 	if (oui)
@@ -29,9 +39,7 @@ void	rrb(t_data *data, int oui)
 	last = ft_lstlast(data->b);
 	tmp = data->b;
 	while (tmp && tmp->next && tmp->next->next)
-	{
 		tmp = tmp->next;
-	}
 	tmp->next = NULL;
 	ft_lstadd_front(&data->b, last);
 	if (oui)

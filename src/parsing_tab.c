@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_tab.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/20 19:40:37 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/20 19:42:31 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	ft_onlydigit(char *str)
@@ -8,7 +20,7 @@ int	ft_onlydigit(char *str)
 	if (str[0] == '-')
 		i++;
 	if (str[i] < '0' || str[i] > '9')
-			return (1);
+		return (1);
 	while (i < ft_strlen(str))
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -71,6 +83,7 @@ int	ft_check_size(char *str)
 	free(newstr);
 	return (error);
 }
+
 int	ft_size(char *str)
 {
 	int	i;

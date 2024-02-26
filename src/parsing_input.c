@@ -1,5 +1,16 @@
-#include "../includes/push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_input.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/20 19:41:51 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/20 19:41:56 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../includes/push_swap.h"
 
 int	ft_check_args(char **tab)
 {
@@ -31,21 +42,21 @@ char	**ft_parsing(int argc, char **argv)
 	char	**tab;
 	int		i;
 
-    if (argc == 2)
-        tab = ft_split(argv[1], ' ');
-    else
-    {
-        tab = malloc(sizeof(char *) * argc);
-        if (tab == NULL)
-            return (NULL);
-        i = 0;
-        while (i < argc - 1)
+	if (argc == 2)
+		tab = ft_split(argv[1], ' ');
+	else
+	{
+		tab = malloc(sizeof(char *) * argc);
+		if (tab == NULL)
+			return (NULL);
+		i = 0;
+		while (i < argc - 1)
 		{
-            tab[i] = argv[1 + i];
+			tab[i] = argv[1 + i];
 			i++;
 		}
-        tab[i] = NULL;   
-    }
-    ft_check_args(tab);
+		tab[i] = NULL;
+	}
+	ft_check_args(tab);
 	return (tab);
 }
