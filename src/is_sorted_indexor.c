@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:36:59 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/26 12:16:56 by albestae         ###   ########.fr       */
+/*   Updated: 2024/02/26 19:02:37 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_is_sorted(t_list *lst)
 	return (0);
 }
 
-static void	ft_index_lst(t_list *lst)
+static void	ft_index_mediane(t_list *lst)
 {
 	t_list *tmp;
 	int	i;
@@ -49,8 +49,8 @@ static void	ft_index_lst(t_list *lst)
 
 void	ft_index(t_data *data)
 {
-	ft_index_lst(data->a);
-	ft_index_lst(data->b);
+	ft_index_mediane(data->a);
+	ft_index_mediane(data->b);
 	data->size_a = ft_lst_size(data->a);
 	data->size_b = ft_lst_size(data->b);
 }

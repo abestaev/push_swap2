@@ -21,6 +21,8 @@ typedef struct s_data
 	t_list			*b;
 	int				size_a;
 	int				size_b;
+	int				index_a;
+	int				index_b;
 }					t_data;
 
 void				sa(t_data *data, int oui);
@@ -66,5 +68,6 @@ void				ft_index(t_data *data);
 void				ft_cost(t_data *data);
 int					ft_is_min(t_list *lst, int n);
 int					ft_is_max(t_list *lst, int n);
+void				ft_select_node(t_data *data);
 
 #endif
