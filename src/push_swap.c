@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:37:27 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/29 05:43:33 by albestae         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:21:01 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
+	if (argc == 1)
+		return (1);
 	data = ft_init(argc, argv);
 	if (data.size_a == 2)
 		ft_sort_two(&data);
