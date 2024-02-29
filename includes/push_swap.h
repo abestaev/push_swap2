@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/29 05:37:09 by albestae          #+#    #+#             */
+/*   Updated: 2024/02/29 05:53:09 by albestae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -60,7 +72,6 @@ t_data				ft_init(int argc, char **argv);
 
 void				ft_sort_three_reverse(t_data *data, t_list *lst);
 void				ft_sort_three(t_data *data, t_list *lst);
-void				ft_sort_two(t_data *data);
 
 int					ft_is_sorted(t_list *lst);
 void				push_b_opti(t_data *data);
@@ -69,5 +80,18 @@ void				ft_cost(t_data *data);
 int					ft_is_min(t_list *lst, int n);
 int					ft_is_max(t_list *lst, int n);
 void				ft_select_node(t_data *data);
+void				ft_select_move(t_data *data);
+void				ft_check_mediane(t_data *data);
+void				ft_best_move_a(t_data *data);
+void				ft_best_move_b(t_data *data);
+void				push_a(t_data *data);
+void				ft_index_mediane(t_list *lst);
+void				push_b_opti(t_data *data);
+void				ft_on_top(t_list *lst);
+void				ft_get_target_cost(t_data *data);
+int					ft_get_target(t_list *lst, int n);
+int					ft_get_target_min(t_list *lst);
+int					ft_get_target_max(t_list *lst);
+void				ft_cost(t_data *data);
 
 #endif
