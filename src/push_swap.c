@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:37:27 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/29 14:21:01 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/07 04:38:28 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ static void	ft_free(t_data *data)
 		tmp = data->a->next;
 		free(data->a);
 		data->a = tmp;
+	}
+	while (data->b)
+	{
+		tmp = data->b->next;
+		free(data->b);
+		data->b = tmp;
 	}
 }
 
@@ -43,7 +49,7 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	if (argc == 1)
+	if (argc == 1 || argc == 2)
 		return (1);
 	data = ft_init(argc, argv);
 	if (data.size_a == 2)
@@ -59,7 +65,7 @@ int	main(int argc, char **argv)
 		while (data.a)
 			push_b_opti(&data);
 		push_a(&data);
-		ft_free(&data);
 	}
+	ft_free(&data);
 	return (0);
 }
