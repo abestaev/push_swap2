@@ -6,7 +6,7 @@
 #    By: albestae <albestae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 21:31:46 by albestae          #+#    #+#              #
-#    Updated: 2024/02/29 05:49:12 by albestae         ###   ########.fr        #
+#    Updated: 2024/03/09 16:44:08 by albestae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = push_swap
 
 SRC = src/ft_split.c src/init.c src/push_swap.c src/parsing_tab.c \
 	src/parsing_input.c src/op/push.c src/op/reverse_rotate.c src/op/rotate.c \
-	src/op/swap.c src/op/utils_lst.c src/utils.c src/sort_three.c \
+	src/op/swap.c src/op/utils_lst.c src/utils.c src/sort_three_five.c \
 	src/is_sorted_indexor.c src/push_b_opti.c src/min_max.c src/push_a.c \
 	src/target.c src/select_move.c
 

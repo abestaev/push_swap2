@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:37:27 by albestae          #+#    #+#             */
-/*   Updated: 2024/03/07 04:38:28 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/09 21:47:48 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,6 @@ static void	ft_free(t_data *data)
 	}
 }
 
-static void	ft_sort_two(t_data *data)
-{
-	if (data->a->content > data->a->next->content)
-		sa(data, 1);
-}
-
 void	push_b_opti(t_data *data)
 {
 	ft_index(data);
@@ -49,19 +43,21 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	if (argc == 1 || argc == 2)
+	if (argc == 1)
 		return (1);
 	data = ft_init(argc, argv);
 	if (data.size_a == 2)
-		ft_sort_two(&data);
+		ft_sort_two(&data, data.a);
 	else if (data.size_a == 3)
 		ft_sort_three(&data, data.a);
-	else
+	else if (data.size_a == 5 && ft_is_sorted(data.a) == 1)
+		ft_sort_five(&data);
+	else if (ft_is_sorted(data.a) == 1)
 	{
 		pb(&data);
 		pb(&data);
-		pb(&data);
-		ft_sort_three_reverse(&data, data.b);
+		if (data.b->content < data.b->next->content)
+			sb(&data, 1);
 		while (data.a)
 			push_b_opti(&data);
 		push_a(&data);

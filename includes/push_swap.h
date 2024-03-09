@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 05:37:09 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/29 05:53:09 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/09 21:30:33 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,7 @@ int					ft_get_target(t_list *lst, int n);
 int					ft_get_target_min(t_list *lst);
 int					ft_get_target_max(t_list *lst);
 void				ft_cost(t_data *data);
+void				ft_sort_two(t_data *data, t_list *lst);
+void				ft_sort_five(t_data *data);
 
 #endif
