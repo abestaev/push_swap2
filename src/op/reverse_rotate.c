@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:38:11 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/26 11:31:01 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 04:31:17 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	rra(t_data *data, int oui)
 	tmp->next = NULL;
 	ft_lstadd_front(&data->a, last);
 	if (oui)
-		ft_putendl_fd("rra", 1);
+		write(1, "rra\n", 4);
 }
 
 void	rrb(t_data *data, int oui)
@@ -43,12 +43,12 @@ void	rrb(t_data *data, int oui)
 	tmp->next = NULL;
 	ft_lstadd_front(&data->b, last);
 	if (oui)
-		ft_putendl_fd("rrb", 1);
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_data *data)
 {
 	rra(data, 0);
 	rrb(data, 0);
-	ft_putendl_fd("rrr", 1);
+	write(1, "rrr\n", 4);
 }

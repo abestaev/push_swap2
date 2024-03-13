@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albestae <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:39:08 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/20 19:39:11 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 04:29:42 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sa(t_data *data, int oui)
 		ft_lstadd_front(&data->a, tmp);
 	}
 	if (oui)
-		ft_putendl_fd("sa", 1);
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_data *data, int oui)
@@ -37,12 +37,12 @@ void	sb(t_data *data, int oui)
 		ft_lstadd_front(&data->b, tmp);
 	}
 	if (oui)
-		ft_putendl_fd("sb", 1);
+		write(1, "sb\n", 3);
 }
 
 void	ss(t_data *data)
 {
 	sb(data, 0);
 	sa(data, 0);
-	ft_putendl_fd("ss", 1);
+	write(1, "ss\n", 3);
 }

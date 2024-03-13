@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:41:51 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/20 19:41:56 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 03:24:44 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@ int	ft_check_args(char **tab)
 {
 	int	i;
 
+	if (!tab[0])
+		ft_error("Error", tab);
 	i = 0;
 	while (tab[i])
 	{
 		if (ft_onlydigit(tab[i]))
-			ft_error("Error: Not only digit", tab);
+			ft_error("Error", tab);
 		if (ft_check_size(tab[i]))
-			ft_error("Error: Bigger than int", tab);
+			ft_error("Error", tab);
 		i++;
 	}
 	if (ft_check_doublons(tab))
-		ft_error("Error: Multiple occurences", tab);
+		ft_error("Error", tab);
 	return (0);
 }
 

@@ -6,13 +6,13 @@
 #    By: albestae <albestae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/08 21:31:46 by albestae          #+#    #+#              #
-#    Updated: 2024/03/09 16:44:08 by albestae         ###   ########.fr        #
+#    Updated: 2024/03/13 04:44:59 by albestae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -MMD -MP
 
 NAME = push_swap
 
@@ -26,6 +26,8 @@ HEADER = -I include
 
 OBJ = $(SRC:.c=.o)
 
+D = $(SRC:.c=.d)
+
 all: $(NAME)
 
 %.o:%.c
@@ -36,10 +38,14 @@ $(NAME): $(OBJ)
 
 clean:
 		rm -rf $(OBJ)
+		rm -rf $(D)
 
 fclean: clean
 		rm -rf $(NAME)
 
-re: fclean all
+re: fclean 
+	make all
 
 .PHONY: all clean fclean re
+
+-include $(D)

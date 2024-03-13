@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:37:27 by albestae          #+#    #+#             */
-/*   Updated: 2024/03/09 21:47:48 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 10:41:11 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ int	main(int argc, char **argv)
 	else if (ft_is_sorted(data.a) == 1)
 	{
 		pb(&data);
-		pb(&data);
-		if (data.b->content < data.b->next->content)
-			sb(&data, 1);
 		while (data.a)
 			push_b_opti(&data);
 		push_a(&data);

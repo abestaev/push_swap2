@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:38:01 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/26 11:30:52 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 04:30:56 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	pa(t_data *data)
 	data->b = data->b->next;
 	tmp->next = NULL;
 	ft_lstadd_front(&data->a, tmp);
-	ft_putendl_fd("pa", 1);
+	data->size_a++;
+	data->size_b--;
+	write(1, "pa\n", 3);
 }
 
 void	pb(t_data *data)
@@ -35,5 +37,7 @@ void	pb(t_data *data)
 	data->a = data->a->next;
 	tmp->next = NULL;
 	ft_lstadd_front(&data->b, tmp);
-	ft_putendl_fd("pb", 1);
+	data->size_a--;
+	data->size_b++;
+	write(1, "pb\n", 3);
 }

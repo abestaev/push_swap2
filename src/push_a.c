@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albestae <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 05:38:45 by albestae          #+#    #+#             */
-/*   Updated: 2024/02/29 05:38:47 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 04:41:44 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ void	push_a(t_data *data)
 
 	while (data->b)
 		pa(data);
-	ft_index_mediane(data->a);
-	data->size_a = ft_lst_size(data->a);
+	ft_index_mediane(data->a, data->size_a);
 	tmp = data->a;
 	min = tmp->content;
 	while (tmp)

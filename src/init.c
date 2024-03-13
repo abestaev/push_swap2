@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 19:42:07 by albestae          #+#    #+#             */
-/*   Updated: 2024/03/12 00:45:42 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 03:46:03 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_data	ft_init(int argc, char **argv)
 		i++;
 	}
 	data.b = NULL;
+	data.size_b = 0;
 	data.size_a = ft_lst_size(data.a);
 	if (argc == 2)
 		ft_free_split(tab);

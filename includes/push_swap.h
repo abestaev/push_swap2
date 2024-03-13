@@ -6,7 +6,7 @@
 /*   By: albestae <albestae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 05:37:09 by albestae          #+#    #+#             */
-/*   Updated: 2024/03/09 21:30:33 by albestae         ###   ########.fr       */
+/*   Updated: 2024/03/13 04:23:13 by albestae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <time.h>
 
 typedef struct s_list
 {
@@ -24,6 +25,7 @@ typedef struct s_list
 	int				index;
 	int				mediane;
 	int				target;
+	int				min;
 	struct s_list	*next;
 }					t_list;
 
@@ -85,7 +87,7 @@ void				ft_check_mediane(t_data *data);
 void				ft_best_move_a(t_data *data);
 void				ft_best_move_b(t_data *data);
 void				push_a(t_data *data);
-void				ft_index_mediane(t_list *lst);
+void				ft_index_mediane(t_list *lst, int size);
 void				push_b_opti(t_data *data);
 void				ft_on_top(t_list *lst);
 void				ft_get_target_cost(t_data *data);
